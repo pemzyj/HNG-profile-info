@@ -1,8 +1,8 @@
 # HNG-profile-info
 A simple RESTful API endpoint that returns my profile information along with a dynamic cat featched from an external API
 Setup:
-1.	For this project, I used Node.js/Express.
-2.	To start the project, I initialized node package manager (npm) using command ‘npm init’ 
+1.	For this project, use Node.js/Express.
+2.	To start the project, initialize node package manager (npm) using command ‘npm init’ 
 3.	Install express.js and nodemon as dev dependency to automatically restart server after changes.
 4.	In the package.json file, include “type”:”module” to use ES modules command
 
