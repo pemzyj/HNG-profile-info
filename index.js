@@ -1,7 +1,9 @@
 import express from 'express';
+import 'dotenv/config';
 
 
 const app = express();
+const PORT = process.env.PORT || 8000;
 
 
 
@@ -15,7 +17,7 @@ const user = {
 
 async function fetchCatFact () {
     try{
-        const res = await fetch('https://catfact.ninja/fact', {timeout: 5000});
+        const res = await fetch(process.env.API_URI, {timeout: 5000});
         if (!res.ok) {
             throw new Error(`API error: ${res.status}`); //throw new Error provides a message
         }
@@ -39,4 +41,4 @@ app.get('/me', async (req, res) => {
 });
 
 
-app.listen(8080, ()=>console.log('server is running on http://localhost:8080/me'));
+app.listen(PORT, ()=> {console.log(`server is running on http://localhost:${PORT}/me`)});
