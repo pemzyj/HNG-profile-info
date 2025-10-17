@@ -43,5 +43,16 @@ app.get('/me', async (req, res) => {
     res.status(200).json({status: 'success', user:user, timestamp:timestamp, fact:data}); 
 });
 
+// to check endpoint health for deployment
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'ok' });
+});
+
 
 app.listen(PORT, '0.0.0.0', ()=> {console.log(`server is running on port ${PORT}`)});
+
+
+process.on('SIGTERM', () => {
+  console.log('Process terminated');
+  process.exit(0);
+});
