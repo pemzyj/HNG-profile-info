@@ -4,7 +4,7 @@ import cors from 'cors';
 
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
 
 app.use(cors());
 
@@ -20,7 +20,7 @@ const user = {
 
 async function fetchCatFact () {
     try{
-        const res = await fetch(process.env.API_URI, {timeout: 5000});
+        const res = await fetch(process.env.API_URI, {timeout: 10000});
         if (!res.ok) {
             throw new Error(`API error: ${res.status}`); //throw new Error provides a message
         }
